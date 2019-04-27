@@ -1,0 +1,9 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.controls {
+  text-align: left;
+  width: 80%;
+  margin: 5% auto;
+}
