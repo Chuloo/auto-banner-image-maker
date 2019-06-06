@@ -49,26 +49,24 @@ function App() {
   // Fetch Image from custom API
   const fetchImage = () => {
     axios
-      .get("https://kxpr3650ro.sse.codesandbox.io/api/random-photo")
+      .get("https://image-generator-api.williamimoh.now.sh/api/random-photo")
       .then(res => {
         console.log(res.data);
         setImage(res.data.id);
-      });
+      })
+      .catch(err => console.log(err));
   };
 
   const handleTitle = e => {
     setArticleTitle(e.target.value);
-    console.log(articleTitle);
   };
 
   const handleTheme = e => {
     setTheme(e.target.value);
-    console.log(theme);
   };
 
   const handleWidth = e => {
     setBannerWidth(+e.target.value);
-    console.log(bannerWidth);
   };
 
   return (
@@ -96,7 +94,7 @@ function App() {
           <div className="field">
             <label className="label">Width</label>
             <div className="control">
-              <div class="select">
+              <div className="select">
                 <select value={bannerWidth} onChange={handleWidth}>
                   <option value="1000">1000px</option>
                   <option value="500">500px</option>
@@ -107,8 +105,8 @@ function App() {
 
           <div class="field">
             <label class="label">Theme</label>
-            <div class="control">
-              <div class="select">
+            <div className="control">
+              <div className="select">
                 <select value={theme} onChange={handleTheme}>
                   <option value="dark">Dark</option>
                   <option value="light">Light</option>
